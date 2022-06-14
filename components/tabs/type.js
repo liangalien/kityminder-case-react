@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Button} from 'antd';
+import '../../minder.css';
+
 
 class Type extends Component {
     state = {

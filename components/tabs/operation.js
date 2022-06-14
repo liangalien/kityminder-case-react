@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Row, Button, Dropdown, Menu, Drawer, Input } from 'antd';
 import { DownOutlined, DeleteOutlined, BarsOutlined } from '@ant-design/icons';
+import '../../minder.css';
 
 const { TextArea } = Input;
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Button} from 'antd';
 import { EnterOutlined, RollbackOutlined, RetweetOutlined } from '@ant-design/icons';
+import '../../minder.css';
 
 class AppendNode extends Component {
     insertNode(command) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Button} from 'antd';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
+import '../../minder.css';
 
 class Arrange extends Component {
     render() {

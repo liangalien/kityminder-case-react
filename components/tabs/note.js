@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Menu, Space, Dropdown } from 'antd';
 import { BarsOutlined, DownOutlined } from '@ant-design/icons';
+import '../../minder.css';
 
 class Note extends Component {
     render() {

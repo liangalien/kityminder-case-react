@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Button} from 'antd';
 import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
+import '../../minder.css';
 
 class Disabled extends Component {
     render() {
