@@ -17,14 +17,17 @@
     "antd": "^4.21.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "hotbox-ui": "^1.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "kity": "^2.0.4",
+    "kityminder-core": "^1.4.50",
     "mini-css-extract-plugin": "^0.8.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "style-loader": "^3.3.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
     "kity": "^2.0.4",
     "kityminder-core": "^1.4.50",
     "hotbox-ui": "^1.0.0"
