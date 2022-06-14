@@ -12,9 +12,9 @@ import Result from './tabs/result';
 import 'hotbox-ui';
 import 'kity';
 import 'kityminder-core';
-import 'kityminder-core/dist/kityminder.core.css'
-import 'kityminder-editor/kityminder.editor';
-import 'kityminder-editor/kityminder.editor.css'
+import 'kityminder-core/dist/kityminder.core.css';
+import '../kityminder-editor/kityminder.editor';
+import '../kityminder-editor/kityminder.editor.css';
 
 import 'hotbox-ui/hotbox.css';
 
