@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EditorCase from './components/editorCase';
-import './index.css';
+import './index.less';
 
 class App extends Component {
     render() {

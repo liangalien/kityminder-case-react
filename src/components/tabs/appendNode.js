@@ -3,6 +3,13 @@ import { Row, Button} from 'antd';
 import { EnterOutlined, RollbackOutlined, RetweetOutlined } from '@ant-design/icons';
 
 class AppendNode extends Component {
+
+    isDisabled(command) {
+        if (this.props.minder && this.props.minder.queryCommandState(command) === -1)
+            return 'disabled';
+        return '';
+    }
+
     insertNode(command) {
         if (this.props.minder.queryCommandState(command) === -1)
             return;
@@ -14,16 +21,16 @@ class AppendNode extends Component {
         return (
             <div className="km-btn-group">
                 <Row>
-                    <Button type="text" shape="round" icon={<EnterOutlined />} size="small" onClick={()=>{this.insertNode('AppendNextNode')}}>
+                    <Button disabled={this.isDisabled('AppendNextNode')} type="text" shape="round" icon={<EnterOutlined />} size="small" onClick={()=>{this.insertNode('AppendNextNode')}}>
                         插入下级
                     </Button>
-                    <Button type="text" shape="round" icon={<RollbackOutlined />} size="small" onClick={()=>{this.insertNode('AppendPrevNode')}}>
+                    <Button disabled={this.isDisabled('AppendPrevNode')} type="text" shape="round" icon={<RollbackOutlined />} size="small" onClick={()=>{this.insertNode('AppendPrevNode')}}>
                         插入上级
                     </Button>
                 </Row>
 
                 <Row>
-                    <Button type="text" shape="round" icon={<RetweetOutlined />} size="small" onClick={()=>{this.insertNode('AppendSameNode')}}>
+                    <Button disabled={this.isDisabled('AppendSameNode')} type="text" shape="round" icon={<RetweetOutlined />} size="small" onClick={()=>{this.insertNode('AppendSameNode')}}>
                         插入同级
                     </Button>
                 </Row>
@@ -31,5 +38,6 @@ class AppendNode extends Component {
         )
     }
 }
+
 
 export default AppendNode;

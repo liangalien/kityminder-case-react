@@ -7,12 +7,12 @@ class Disabled extends Component {
         return (
             <div className="km-btn-group">
                 <Row>
-                    <Button type="text" shape="round" icon={<EyeInvisibleOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('disabled', 1)}}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('note')} type="text" shape="round" icon={<EyeInvisibleOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('disabled', 1)}}>
                         禁用
                     </Button>
                 </Row>
                 <Row>
-                    <Button type="text" shape="round" icon={<EyeOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('disabled', 0)}}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('note') === -1} type="text" shape="round" icon={<EyeOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('disabled', 0)}}>
                         启用
                     </Button>
                 </Row>

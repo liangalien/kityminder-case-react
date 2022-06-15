@@ -36,12 +36,12 @@ class Operation extends Component {
             <div>
             <div className="km-btn-group">
                 <Row>
-                    <Button type="text" shape="round" icon={<BarsOutlined/>} size="small" onClick={this.onShow}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('note') === -1} type="text" shape="round" icon={<BarsOutlined/>} size="small" onClick={this.onShow}>
                             备注
                     </Button>
                 </Row>
                 <Row>
-                    <Button type="text" shape="round" icon={<DeleteOutlined />} size="small" onClick={()=>{this.props.minder.queryCommandState('RemoveNode') === -1 || this.props.minder.execCommand('RemoveNode')}}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('RemoveNode') === -1 && 'disabled' || ''} type="text" shape="round" icon={<DeleteOutlined />} size="small" onClick={()=>{this.props.minder.queryCommandState('RemoveNode') === -1 || this.props.minder.execCommand('RemoveNode')}}>
                         删除
                     </Button>
                 </Row>

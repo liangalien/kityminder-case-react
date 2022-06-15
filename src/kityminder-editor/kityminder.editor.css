@@ -886,9 +886,9 @@ div.minder-editor-container {
 div a.theme-item {
   display: inline-block;
   width: 70px;
-  height: 30px;
+  height: 35px;
   text-align: center;
-  line-height: 30px;
+  line-height: 35px;
   padding: 0 5px;
   font-size: 12px;
   cursor: pointer;

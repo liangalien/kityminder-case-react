@@ -8,6 +8,12 @@ import Disabled from './tabs/disabled';
 import Priority from './tabs/priority';
 import Type from './tabs/type';
 import Result from './tabs/result';
+import Issue from './tabs/issue';
+import Template from './tabs/template';
+import Theme from './tabs/theme';
+import LayoutStyle from './tabs/layout';
+import Expand from './tabs/expand';
+import SearchNode from './tabs/search';
 
 import 'hotbox-ui';
 import 'kity';
@@ -40,13 +46,14 @@ class EditorCase extends Component {
     render() {
         return (
             <div>
-            <Tabs defaultActiveKey="1" style={{margin: "0 10px 0 10px"}}>
+            <Tabs defaultActiveKey="2" style={{margin: "0 10px 0 10px"}}>
                 <TabPane tab="编辑" key="1">
                     <Layout class='page-header'>
                         <AppendNode minder={this.minder}/>
                         <Arrange minder={this.minder}/>
                         <Operation minder={this.minder}/>
                         <Disabled minder={this.minder}/>
+                        <Issue minder={this.minder}/>
                         <Priority minder={this.minder}/>
                         <Type minder={this.minder}/>
                         <Result minder={this.minder}/>
@@ -55,21 +62,19 @@ class EditorCase extends Component {
 
                 <TabPane tab="外观" key="2">
                     <Layout class='page-header'>
-
-                    </Layout>
-                </TabPane>
-
-                <TabPane tab="视图" key="3">
-                    <Layout class='page-header'>
-
+                        <Template minder={this.minder}/>
+                        <Theme minder={this.minder}/>
+                        <Expand minder={this.minder}/>
+                        <LayoutStyle minder={this.minder}/>
+                        <SearchNode minder={this.minder}/>
                     </Layout>
                 </TabPane>
             </Tabs>
 
-            <div style={{width: '100%', height: '100vh'}} ref={(input) => {
+            <div style={{width: '100%', height: 'calc(100vh - 92px)'}} ref={(input) => {
                 if (!this.minder) {
                     this.editor = new window.kityminder.Editor(input);
-                    this.minder = this.editor.minder;
+                    window.minder = this.minder = this.editor.minder;
 
                     if (this.props.hasOwnProperty('data')) {
                         this.minder.importJson(this.props.data);
@@ -77,6 +82,11 @@ class EditorCase extends Component {
                         this.minder.execCommand('type', 1);
                         this.minder.execCommand('text', '模块名称');
                     }
+
+                    var _this = this;
+                    this.minder.on('selectionchange', function (e) {
+                        _this.setState({minder: _this.minder});
+                    });
                 }
             }}>
             </div>

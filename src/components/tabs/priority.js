@@ -10,13 +10,15 @@ import priority3 from "../../images/p3.png";
 class Priority extends Component {
     render() {
         return (
-            <div className="km-btn-group km-priority">
-                <Row>
-                    <img src={ priorityDelete } onClick={()=>{this.props.minder.execCommand('priority', null)}}/>
-                    <img src={ priority1 } onClick={()=>{this.props.minder.execCommand('priority', 1)}}/>
-                    <img src={ priority2 } onClick={()=>{this.props.minder.execCommand('priority', 2)}}/>
-                    <img src={ priority3 } onClick={()=>{this.props.minder.execCommand('priority', 3)}}/>
-                </Row>
+            <div className="km-btn-group">
+                <div className="km-priority">
+                    <Row>
+                        <img disabled={this.props.minder && this.props.minder.queryCommandState('priority') === -1} src={ priorityDelete } onClick={()=>{this.props.minder.execCommand('priority', null)}}/>
+                        <img disabled={this.props.minder && this.props.minder.queryCommandState('priority') === -1} src={ priority1 } onClick={()=>{this.props.minder.execCommand('priority', 1)}}/>
+                        <img disabled={this.props.minder && this.props.minder.queryCommandState('priority') === -1} src={ priority2 } onClick={()=>{this.props.minder.execCommand('priority', 2)}}/>
+                        <img disabled={this.props.minder && this.props.minder.queryCommandState('priority') === -1} src={ priority3 } onClick={()=>{this.props.minder.execCommand('priority', 3)}}/>
+                    </Row>
+                </div>
             </div>
         )
     }

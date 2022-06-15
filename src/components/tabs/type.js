@@ -21,18 +21,20 @@ class Type extends Component {
 
     render() {
         return (
-            <div className="km-btn-group km-type">
-                <Row>
-                    <label>
-                        <span style={{background: this.state.background1}} onClick={()=>{this.props.minder.execCommand('type', 1)}}>模块</span>
-                    </label>
-                    <label>
-                        <span style={{background: this.state.background2}} onClick={()=>{this.props.minder.execCommand('type', 2)}}>用例</span>
-                    </label>
-                    <label>
-                        <span style={{background: this.state.background3}} onClick={()=>{this.props.minder.execCommand('type', 3)}}>步骤</span>
-                    </label>
-                </Row>
+            <div className="km-btn-group">
+                <div className="km-type">
+                    <Row>
+                        <label>
+                            <span disabled={this.props.minder && this.props.minder.queryCommandState('type') === -1} style={{background: this.state.background1}} onClick={()=>{this.props.minder.execCommand('type', 1)}}>模块</span>
+                        </label>
+                        <label>
+                            <span disabled={this.props.minder && this.props.minder.queryCommandState('type') === -1} style={{background: this.state.background2}} onClick={()=>{this.props.minder.execCommand('type', 2)}}>用例</span>
+                        </label>
+                        <label>
+                            <span disabled={this.props.minder && this.props.minder.queryCommandState('type') === -1} style={{background: this.state.background3}} onClick={()=>{this.props.minder.execCommand('type', 3)}}>步骤</span>
+                        </label>
+                    </Row>
+                </div>
             </div>
         )
     }
