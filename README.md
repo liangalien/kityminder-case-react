@@ -9,9 +9,9 @@ KityMinder Case React(Antd)
 ## 预览
 [![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)
 
-[![](https://raw.githubusercontent.com/liangalien/kityminder-case-react/8d3bc2224b3ca9d02161ba9c914ad863bad2bdce/src/images/s2.png)](https://raw.githubusercontent.com/liangalien/kityminder-case-react/8d3bc2224b3ca9d02161ba9c914ad863bad2bdce/src/images/s2.png)
+[![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s2.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s2.png)
 
-[![](https://raw.githubusercontent.com/liangalien/kityminder-case-react/8d3bc2224b3ca9d02161ba9c914ad863bad2bdce/src/images/s3.png)](https://raw.githubusercontent.com/liangalien/kityminder-case-react/8d3bc2224b3ca9d02161ba9c914ad863bad2bdce/src/images/s3.png)
+[![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s3.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s3.png)
 
 ## 开发说明
 
