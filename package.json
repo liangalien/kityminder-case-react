@@ -24,7 +24,6 @@
     "core-js": "^3.4.2",
     "css-loader": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "kityminder-case-react": "^3.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
