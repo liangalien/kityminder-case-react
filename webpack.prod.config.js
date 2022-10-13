@@ -19,6 +19,7 @@ module.exports = {
         extensions: ['.js', '.json', '.scss', '.css'],
         alias: {
             '@': path.resolve(dirname,'src'),
+            '@antd': 'antd'
         }
     },
     module:{

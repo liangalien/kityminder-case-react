@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Input, Button } from 'antd';
+import { Row, Input, Button } from '@antd';
 
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
 

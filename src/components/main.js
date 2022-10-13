@@ -1,5 +1,5 @@
 import React, {useState, useEffect, Component} from 'react';
-import {Tabs, Layout, Spin } from 'antd';
+import {Tabs, Layout, Spin } from '@antd';
 import UndoRedo  from './tabs/undoRedo';
 import AppendNode  from './tabs/appendNode';
 import Arrange from './tabs/arrange';

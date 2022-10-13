@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Space, Dropdown } from 'antd';
+import { Menu, Space, Dropdown } from '@antd';
 import { BarsOutlined, DownOutlined } from '@ant-design/icons';
 
 class Note extends Component {

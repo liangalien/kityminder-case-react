@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Button, Dropdown, Menu, Drawer, Input } from 'antd';
+import {Row, Button, Dropdown, Menu, Drawer, Input } from '@antd';
 import { DownOutlined, DeleteOutlined, BarsOutlined } from '@ant-design/icons';
 
 const { TextArea } = Input;

@@ -20,3 +20,17 @@ npm i
 npm run dev
 npm run build
 ```
+
+## 使用说明
+```bash
+npm i kityminder-case-react
+```
+```javascript
+import MinderCase from 'kityminder-case-react/src/components/main';
+
+export default function () {
+    return (
+        <MinderCase></MinderCase>
+    );
+}
+```
