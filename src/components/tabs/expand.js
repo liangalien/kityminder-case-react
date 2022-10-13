@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button, Menu, Dropdown, Space } from 'antd';
+import { Row, Button, Menu, Dropdown } from 'antd';
 import { NodeExpandOutlined, BorderInnerOutlined, DownOutlined  } from '@ant-design/icons';
 
 class Expand extends Component {
@@ -7,15 +7,13 @@ class Expand extends Component {
         super(props);
 
         this.expandMenu = (
-            <Menu
-                items={['全部', '一级', '二级', '三级', '四级', '五级', '六级'].map((name, index) => {
-                    return {
-                        label: '展开' + name + '节点',
-                        key: index || 999
-                    };
+            <Menu>
+                {['全部', '一级', '二级', '三级', '四级', '五级', '六级'].map((name, index) => {
+                    return <Menu.Item key={index || 999} onClick={this.expandNode.bind(this)}>
+                        展开{name}节点
+                    </Menu.Item>
                 })}
-                onClick={this.expandNode.bind(this)}
-            />
+            </Menu>
         );
 
         this.selectMap = {
@@ -28,15 +26,13 @@ class Expand extends Component {
         };
 
         this.selectMenu = (
-            <Menu
-                items={Object.keys(this.selectMap).map((key, index) => {
-                    return {
-                        label: this.selectMap[key],
-                        key: key
-                    };
+            <Menu>
+                {Object.keys(this.selectMap).map((key) => {
+                    return <Menu.Item key={key} onClick={this.selectNode.bind(this)}>
+                        {this.selectMap[key]}
+                    </Menu.Item>
                 })}
-                onClick={this.selectNode.bind(this)}
-            />
+            </Menu>
         );
     }
 
@@ -128,12 +124,12 @@ class Expand extends Component {
         return (
             <div className="km-btn-group">
                 <Row>
-                    <Button type="text" shape="round" icon={<NodeExpandOutlined />} size="small">
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1} type="text" shape="round" icon={<NodeExpandOutlined />} size="small">
                         <Dropdown overlay={this.expandMenu} trigger={['click']}><span>展开 <DownOutlined /></span></Dropdown>
                     </Button>
                 </Row>
                 <Row>
-                    <Button type="text" shape="round" icon={<BorderInnerOutlined />} size="small">
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1} type="text" shape="round" icon={<BorderInnerOutlined />} size="small">
                         <Dropdown overlay={this.selectMenu} trigger={['click']}><span>全选 <DownOutlined /></span></Dropdown>
                     </Button>
                 </Row>

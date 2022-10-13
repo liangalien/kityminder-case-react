@@ -7,12 +7,12 @@ class LayoutStyle extends Component {
         return (
             <div className="km-btn-group">
                 <Row>
-                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('resetlayout') === -1} type="text" shape="round" icon={<BranchesOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('resetlayout')}}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1} type="text" shape="round" icon={<BranchesOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('resetlayout')}}>
                         整理布局
                     </Button>
                 </Row>
                 <Row>
-                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('clearstyle') === -1} type="text" shape="round" icon={<ClearOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('clearstyle')}}>
+                    <Button disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1} type="text" shape="round" icon={<ClearOutlined />} size="small" onClick={()=>{this.props.minder.execCommand('clearstyle')}}>
                         清除样式
                     </Button>
                 </Row>

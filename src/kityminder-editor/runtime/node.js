@@ -9,11 +9,11 @@ define(function (require, exports, module) {
 
     var buttons = [
       '前移:Alt+Up:ArrangeUp',
-      '下级:Tab|Insert:AppendChildNode',
-      '同级:Enter:AppendSiblingNode',
+      '下级:Tab|Insert:AppendNextNode',
+      '同级:Enter:AppendSameNode',
       '后移:Alt+Down:ArrangeDown',
       '删除:Delete|Backspace:RemoveNode',
-      '上级:Shift+Tab|Shift+Insert:AppendParentNode'
+      '上级:Shift+Tab|Shift+Insert:AppendPrevNode'
     ];
 
     var AppendLock = 0;
@@ -30,7 +30,7 @@ define(function (require, exports, module) {
         action: function () {
           if (command.indexOf('Append') === 0) {
             AppendLock++;
-            minder.execCommand(command, '分支主题');
+            minder.execCommand(command);
 
             function afterAppend() {
               if (!--AppendLock) {
@@ -40,6 +40,13 @@ define(function (require, exports, module) {
             }
             minder.on('layoutallfinish', afterAppend);
           } else {
+            if (command == 'RemoveNode') {
+              var datas = [];
+              minder.getSelectedNodes().forEach(function (node) {
+                 datas.push(node.getData());
+              });
+              minder.fire('dataremove', {reason: 'remove', datas: datas});
+            }
             minder.execCommand(command);
             fsm.jump('normal', 'command-executed');
           }

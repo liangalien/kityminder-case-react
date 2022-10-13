@@ -322,7 +322,7 @@ define(function (require, exports, module) {
             return node;
           }
           importText(node, json, minder);
-          minder.fire("contentchange");
+          minder.fire("contentchange", {reason: 'input', datas: [node.getData()]});
           minder.getRoot().renderTree();
           minder.layout(300);
         });

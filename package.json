@@ -1,13 +1,12 @@
 {
   "name": "kityminder-case-react",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --config webpack.config.js --mode development",
-    "build": "webpack build --config webpack.prod.config.js --mode production",
-    "postinstall": "patch-package"
+    "build": "webpack build --config webpack.prod.config.js --mode production"
   },
   "license": "ISC",
   "dependencies": {
@@ -17,21 +16,23 @@
     "antd": "^4.21.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "file-loader": "^6.2.0",
+    "hotbox-ui": "^1.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "kity": "^2.0.4",
+    "kityminder-case-core": "^1.0.1",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss": "^8.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "style-loader": "^3.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0",
-    "kity": "^2.0.4",
-    "kityminder-core": "^1.4.50",
-    "hotbox-ui": "^1.0.0",
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0"
-  },
-  "devDependencies": {
-    "patch-package": "^6.4.7"
+    "webpack-dev-server": "^4.9.0"
   }
 }

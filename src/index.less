@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.less';
+
 .km-btn-group {
   display: inline-block;
   margin: 5px 0;
@@ -6,6 +8,11 @@
   border-right: 1px dashed #eee;
   float: left;
   font-size: 12px !important;
+
+  .anticon {
+    line-height: 16px;
+    margin-left: 4px;
+  }
 }
 
 .km-btn-group button {
@@ -20,11 +27,6 @@
 .km-priority img {
   margin: 2px;
   cursor: pointer;
-
-  &[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
 }
 
 
@@ -55,6 +57,13 @@
   }
 }
 
+.km-btn-group * {
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
 
 .km-result {
   margin-top: 12px !important;
@@ -62,11 +71,6 @@
   .icon {
     margin: 1px;
     cursor: pointer;
-
-    &[disabled] {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
   }
 }
 
@@ -85,3 +89,5 @@
 .ant-tabs-nav {
   margin-bottom: 0 !important;
 }
+
+

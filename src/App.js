@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import EditorCase from './components/editorCase';
+import MinderCase from './components/main';
 import './index.less';
 
 class App extends Component {
     render() {
         return (
-            <EditorCase></EditorCase>
+            <MinderCase></MinderCase>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button, Menu, Dropdown, Space } from 'antd';
+import { Row, Col, Button, Menu, Dropdown, Space } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 
 class Theme extends Component {
@@ -36,25 +36,25 @@ class Theme extends Component {
         };
 
         this.menu = (
-            <Menu
-                items={Object.keys(this.themeMap).map((key, index) => {
-                    return {
-                        label: <a className={'theme-item'} style={this.getThemeThumbStyle(key)}> {this.themeNameMap[key]}</a>,
-                        key: key
-                    };
-                })}
-                onClick={this.update.bind(this)}
-            />
+            <Menu>
+                <Row gutter={5} style={{width: 230}}>
+                    {Object.keys(this.themeMap).map((key) => {
+                        var style = this.getThemeThumbStyle(key);
+                        style.margin = 5;
+
+                        return <Col span={12}><Menu.Item className='theme-item' key={key} style={style} onClick={e => {
+                            if (this.props.minder && key) {
+                                this.props.minder.execCommand('theme', key);
+                                this.setState({name: this.themeNameMap[key], style: this.getThemeThumbStyle(key)});
+                            }
+                        }}>
+                            <a style={this.getThemeThumbStyle(key)}> {this.themeNameMap[key]}</a>
+                        </Menu.Item></Col>
+                    })}
+                </Row>
+            </Menu>
         );
     }
-
-    update(event) {
-        if (this.props.minder && event.key) {
-            this.props.minder.execCommand('theme', event.key);
-            this.setState({name: this.themeNameMap[event.key], style: this.getThemeThumbStyle(event.key)});
-        }
-    }
-
 
 
     getThemeThumbStyle (theme) {
@@ -80,10 +80,10 @@ class Theme extends Component {
         return (
             <div className='km-btn-group'>
                 <div className='km-theme'>
-                        <Dropdown overlay={this.menu} trigger={['click']}>
-                            <a className={'theme-item'} style={this.state.style}> {this.state.name}
-                            </a>
-                        </Dropdown>
+                    <Dropdown disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1} overlay={this.menu} trigger={['click']}>
+                        <a className={'theme-item'} style={this.state.style}> {this.state.name}
+                        </a>
+                    </Dropdown>
                 </div>
             </div>
         )

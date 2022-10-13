@@ -1,25 +1,37 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
-const dirname = __dirname.replace('build','')
+const dirname = __dirname.replace('build','');
 module.exports = {
-    entry: dirname+'/src/index.js',
+    mode: 'production',
+    entry: dirname + '/src/index.js',
     output: {
         filename: 'kityminder.case.js',
         path: path.resolve(dirname, 'dist'),
-        clean:true
+        clean:true,
+        publicPath: './'
     },
-    resolve:{
+    resolve: {
+        // 自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
+        extensions: ['.js', '.json', '.scss', '.css'],
         alias: {
-            '@': path.join(dirname,'src')
-        },
+            '@': path.resolve(dirname,'src'),
+        }
     },
     module:{
         rules:[
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                type: 'asset/resource'
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        //outputPath: path.resolve(dirname, 'dist') + '/images/', // 图片输出的路径
+                        name: '[name].[ext]'
+                    }
+                }
             },
             {
                 test: /\.css$/i,
@@ -27,11 +39,14 @@ module.exports = {
             },
             {
                 test: /\.less$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader","less-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader",{loader: "less-loader",
+                    options: {
+                        javascriptEnabled: true
+                    }}],
             },
             {
                 test: /\.jsx?$/,
-                exclude:/node_modules/,
+                //exclude:/node_modules/,
                 use:{
                     loader:'babel-loader',
                     options: {
@@ -50,11 +65,24 @@ module.exports = {
             },
         ],
     },
+    devtool: 'inline-source-map',
     plugins:[
         new HtmlWebpackPlugin({
-            template:dirname + '/public/index.html',
+            template:dirname+'/public/index.html',
             filename:'index.html'
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new UglifyJsPlugin(),
+        new OptimizeCSSAssetsPlugin({
+            cssProcessorOptions: {
+                map: {
+                    // 不生成内联映射,这样配置就会生成一个source-map文件
+                    inline: false,
+                    // 向css文件添加source-map路径注释
+                    // 如果没有此项压缩后的css会去除source-map路径注释
+                    annotation: true
+                }
+            }
+        })
     ]
 };

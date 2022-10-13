@@ -1,16 +1,15 @@
-/*!
-      * https://github.com/Starcounter-Jack/Fast-JSON-Patch
-      * json-patch-duplex.js 0.5.0
-      * (c) 2013 Joachim Wester
-      * MIT license
-      */
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
 
 /*!
-    **  Thenable -- Embeddable Minimum Strictly-Compliant Promises/A+ 1.1.1 Thenable
-    **  Copyright (c) 2013-2014 Ralf S. Engelschall <http://engelschall.com>
-    **  Licensed under The MIT License <http://opensource.org/licenses/MIT>
-    **  Source-Code distributed on <http://github.com/rse/thenable>
-    */
+      **  Thenable -- Embeddable Minimum Strictly-Compliant Promises/A+ 1.1.1 Thenable
+      **  Copyright (c) 2013-2014 Ralf S. Engelschall <http://engelschall.com>
+      **  Licensed under The MIT License <http://opensource.org/licenses/MIT>
+      **  Source-Code distributed on <http://github.com/rse/thenable>
+      */
 
 /*!
   Copyright (c) 2018 Jed Watson.
@@ -29,10 +28,10 @@
 
 /*!
  * ====================================================
- * Kity Minder Core - v1.4.50 - 2022-06-13
- * https://github.com/fex-team/kityminder-core
- * GitHub: https://github.com/fex-team/kityminder-core.git 
- * Copyright (c) 2022 Baidu FEX; Licensed BSD-3-Clause
+ * Kity Minder Core For Case - v1.0.0 - 2022-10-13
+ * https://github.com/liangalien/kityminder-case-core
+ * GitHub: git+https://github.com/liangalien/kityminder-case-core.git 
+ * Copyright (c) 2022 shiqiangliang; Licensed 
  * ====================================================
  */
 
@@ -45,39 +44,9 @@
  * ====================================================
  */
 
-/*!
- * ====================================================
- * kityminder-editor - v1.0.67 - 2020-03-04
- * https://github.com/fex-team/kityminder-editor
- * GitHub: https://github.com/fex-team/kityminder-editor 
- * Copyright (c) 2020 ; Licensed 
- * ====================================================
- */
-
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
-/**
- * @license React
- * react-dom.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * @license React
- * react.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * @license React
+/** @license React v0.19.1
  * scheduler.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -88,6 +57,24 @@
 
 /** @license React v16.13.1
  * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.14.0
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.14.0
+ * react.production.min.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
  *

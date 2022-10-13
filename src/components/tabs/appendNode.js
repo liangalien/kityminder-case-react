@@ -17,6 +17,8 @@ class AppendNode extends Component {
         this.props.minder.execCommand(command);
     }
 
+
+
     render() {
         return (
             <div className="km-btn-group">

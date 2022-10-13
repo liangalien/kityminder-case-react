@@ -2,18 +2,22 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const dirname = __dirname.replace('build','')
+const dirname = __dirname.replace('build','');
 module.exports = {
+    mode: 'development',
     entry: dirname + '/src/index.js',
     output: {
         filename: 'kityminder.case.js',
         path: path.resolve(dirname, 'dist'),
-        clean:true
+        publicPath: '/'
     },
-    resolve:{
+
+    resolve: {
+        // 自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
+        extensions: ['.js', '.json', '.scss', '.css'],
         alias: {
-            '@': path.join(dirname,'src')
-        },
+            '@': path.resolve(dirname,'src')
+        }
     },
     module:{
         rules:[
@@ -27,7 +31,10 @@ module.exports = {
             },
             {
                 test: /\.less$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader","less-loader"],
+                use: [MiniCssExtractPlugin.loader, "css-loader",{loader: "less-loader",
+                    options: {
+                        javascriptEnabled: true
+                    }}],
             },
             {
                 test: /\.jsx?$/,
@@ -53,27 +60,9 @@ module.exports = {
     devtool: 'inline-source-map',
     plugins:[
         new HtmlWebpackPlugin({
-            template:dirname+'/public/index.html',
+            template:dirname + '/public/index.html',
             filename:'index.html'
         }),
         new MiniCssExtractPlugin()
     ],
-    devServer: {
-        port: "8080",
-        host: "localhost",
-        proxy: {
-            "/api": {
-                target: 'https://www.6pian.cn',
-                changeOrigin: true,
-                secure: true, // 如果是https接口，需要配置这个参数
-                pathRewrite:{
-                    '^/api':''
-                },
-                headers: {
-                    'kan-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodW9kZSIsInN1YiI6IjE1MTkyMDAyODI3IiwiYXVkIjoiMzQwODI1IiwiaWF0IjoxNjQxODA3MjgzLCJzaWduIjoiYWNiNGZjOWNjMDM4NmJiMzBkNDEzNGE1Zjc3MmFiNzYiLCJleHAiOjE2NzMzNDMyODN9.JCxac0kWmr-31XkSoan8jxGh6pZKXH2wyXULNZuEkfg'
-                }
-            }
-        },
-    },
-
 };
