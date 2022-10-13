@@ -70,7 +70,7 @@ class Main extends Component {
 
     render() {
         return (<div>
-            <Tabs defaultActiveKey="2" style={{margin: "0 10px 0 10px"}} onTabClick={() => this.setState({flag: !this.state.flag})}>
+            <Tabs defaultActiveKey="1" style={{margin: "0 10px 0 10px"}} onTabClick={() => this.setState({flag: !this.state.flag})}>
                 <TabPane tab="编辑" key="1">
                     <Layout class='page-header'>
                         <UndoRedo editor={this.state.editor}/>
