@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Component} from 'react';
+import React, {Component} from 'react';
 import {Tabs, Layout, Spin } from '@antd';
 import UndoRedo  from './tabs/undoRedo';
 import AppendNode  from './tabs/appendNode';
@@ -12,6 +12,7 @@ import Theme from './tabs/theme';
 import LayoutStyle from './tabs/layout';
 import Expand from './tabs/expand';
 import SearchNode from './tabs/search';
+import Navigator from './tabs/navigator';
 
 import 'hotbox-ui';
 import 'kity';
@@ -35,7 +36,6 @@ class Main extends Component {
             minder: null,
             editor: null,
             element: null,
-            spin: false,
             flag: true,
         };
     }
@@ -47,30 +47,53 @@ class Main extends Component {
             this.setState({minder: minder});
             this.setState({editor: editor});
 
-            minder.importJson({
-                root: {
-                    data: {
-                        id: minder.getGuid(),
-                        text: "模块名称",
-                        type: minder.getTypeMap().module.id,
-
-                    },
-                },
-                template: 'right'
-            });
-
             var _this = this;
             minder.on('selectionchange', function (e) {
                 _this.setState({flag: !_this.state.flag}); //触发组件更新
             });
 
 
+            if (this.props.onChange) {
+                minder.on('datachange contentchange', this.props.onChange);
+            }
+
+            if (this.props.onRemove) {
+                minder.on('dataremove', this.props.onRemove);
+            }
+
+            if (this.props.onResult) {
+                minder.on('resultchange', this.props.onResult);
+            }
+
+            if (this.props.onFinished) {
+                this.props.onFinished(minder);
+            }
+
+            if (this.props.default != false) {
+                minder.importJson({
+                    root: {
+                        data: {
+                            id: minder.getGuid(),
+                            text: "模块名称",
+                            type: minder.getTypeMap().module.id,
+
+                        },
+                    },
+                    template: 'right'
+                });
+            }
+
         }
     }
 
     render() {
-        return (<div>
-            <Tabs defaultActiveKey="1" style={{margin: "0 10px 0 10px"}} onTabClick={() => this.setState({flag: !this.state.flag})}>
+        return (<div class="minder-container">
+            <Tabs
+                defaultActiveKey="1"
+                style={{margin: "0 10px 0 10px"}}
+                onTabClick={() => this.setState({flag: !this.state.flag})}
+                {...this.props.tabsProps || {}}
+            >
                 <TabPane tab="编辑" key="1">
                     <Layout class='page-header'>
                         <UndoRedo editor={this.state.editor}/>
@@ -98,11 +121,12 @@ class Main extends Component {
                     </Layout>
                 </TabPane>
             </Tabs>
-            <Spin spinning={this.state.spin}>
-                <div style={{width: '100%', height: 650}} ref={(input) => {
+            <Spin spinning={this.props.loading || false}>
+                <div style={{width: '100%', height: 'calc(100vh - 104px)'}} ref={(input) => {
                     if (this.state.element == null) this.setState({element: input});
                 }}>
                 </div>
+                <Navigator minder={this.state.minder}/>
             </Spin>
         </div>);
     }
