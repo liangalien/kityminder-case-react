@@ -7,11 +7,11 @@ KityMinder Case React(Antd)
 找了很久，都没有找到基于react的百度脑图，无奈之下只能自力更生，自己写了一个。react初学者，写得不咋的，勉强能用，也阉割掉了部分功能（其实是懒得写了）。
 
 ## 预览
-[![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)
+[![](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s1.png)](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s1.png)
 
-[![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s2.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s2.png)
+[![](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s2.png)](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s2.png)
 
-[![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s3.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s3.png)
+[![](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s3.png)](https://github.com/liangalien/kityminder-case-react/blob/master/src/images/s3.png)
 
 ## 开发说明
 
