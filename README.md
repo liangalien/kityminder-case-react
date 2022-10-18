@@ -34,3 +34,14 @@ export default function () {
     );
 }
 ```
+
+```javascript
+//报错@antd找不到，需要在webpack.conf添加
+module.exports = {
+    resolve: {
+        alias: {
+            '@antd': 'antd'
+        }
+    }
+}
+```

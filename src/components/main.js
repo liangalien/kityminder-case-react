@@ -8,8 +8,10 @@ import Disabled from './tabs/disabled';
 import Priority from './tabs/priority';
 import Type from './tabs/type';
 import Result from './tabs/result';
+import Template from './tabs/template';
 import Theme from './tabs/theme';
 import LayoutStyle from './tabs/layout';
+import Fonts from './tabs/font';
 import Expand from './tabs/expand';
 import SearchNode from './tabs/search';
 import Navigator from './tabs/navigator';
@@ -76,8 +78,15 @@ class Main extends Component {
                             id: minder.getGuid(),
                             text: "模块名称",
                             type: minder.getTypeMap().module.id,
-
                         },
+                        children: [{
+                            data: {
+                                id: minder.getGuid(),
+                                text: "用例名称",
+                                type: minder.getTypeMap().case.id,
+
+                            },
+                        }]
                     },
                     template: 'right'
                 });
@@ -91,7 +100,7 @@ class Main extends Component {
             <Tabs
                 defaultActiveKey="1"
                 style={{margin: "0 10px 0 10px"}}
-                onTabClick={() => this.setState({flag: !this.state.flag})}
+                onChange={() => this.setState({flag: !this.state.flag})}
                 {...this.props.tabsProps || {}}
             >
                 <TabPane tab="编辑" key="1">
@@ -108,9 +117,11 @@ class Main extends Component {
 
                 <TabPane tab="外观" key="2">
                     <Layout class='page-header'>
+                        <Template minder={this.state.minder}/>
                         <Theme minder={this.state.minder}/>
                         <Expand minder={this.state.minder}/>
                         <LayoutStyle minder={this.state.minder}/>
+                        <Fonts minder={this.state.minder}/>
                         <SearchNode minder={this.state.minder}/>
                     </Layout>
                 </TabPane>
@@ -122,7 +133,7 @@ class Main extends Component {
                 </TabPane>
             </Tabs>
             <Spin spinning={this.props.loading || false}>
-                <div style={{width: '100%', height: 'calc(100vh - 104px)'}} ref={(input) => {
+                <div style={{width: '100%', height: 'calc(100vh - 109px)'}} ref={(input) => {
                     if (this.state.element == null) this.setState({element: input});
                 }}>
                 </div>

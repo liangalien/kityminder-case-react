@@ -28,7 +28,7 @@ object-assign
 
 /*!
  * ====================================================
- * Kity Minder Core For Case - v1.0.0 - 2022-10-13
+ * Kity Minder Core For Case - v1.1.0 - 2022-10-18
  * https://github.com/liangalien/kityminder-case-core
  * GitHub: git+https://github.com/liangalien/kityminder-case-core.git 
  * Copyright (c) 2022 shiqiangliang; Licensed 

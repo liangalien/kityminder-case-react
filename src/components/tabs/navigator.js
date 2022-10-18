@@ -15,8 +15,6 @@ class Navigator extends Component {
     zoomStack = [10, 20, 30, 50, 80, 100, 120, 150, 200];
 
     componentDidMount() {
-        console.log("componentDidMount")
-
         this.setState({panHeight: document.getElementsByClassName("zoom-pan")[0].offsetHeight});
     }
 
