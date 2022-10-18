@@ -12,6 +12,8 @@ class Navigator extends Component {
         };
     }
 
+    zoomStack = [10, 20, 30, 50, 80, 100, 120, 150, 200];
+
     componentDidMount() {
         console.log("componentDidMount")
 
@@ -20,16 +22,15 @@ class Navigator extends Component {
 
     componentDidUpdate() {
         if (!this.state.zoomEvent && this.props.minder) {
-            // 发生缩放事件时
-            this.props.minder.on('zoom', e => this.setState({zoom: e.zoom}));
+            this.props.minder.setDefaultOptions({zoom: this.zoomStack});
+            this.props.minder.on('zoom', e => this.setState({zoom: e.zoom})); // 发生缩放事件时
             this.setState({zoomEvent: true});
         }
     }
 
     getZoomRadio = function(value) {
-        var zoomStack = [10, 20, 30, 50, 80, 100, 120, 150, 200];
-        var minValue = zoomStack[0];
-        var maxValue = zoomStack[zoomStack.length - 1];
+        var minValue = this.zoomStack[0];
+        var maxValue = this.zoomStack[this.zoomStack.length - 1];
         var valueRange = maxValue - minValue;
 
         return (1 - (value - minValue) / valueRange);
