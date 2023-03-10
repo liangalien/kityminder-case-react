@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button} from '@antd';
+import { Row, Button} from 'antd';
 
 class Type extends Component {
     state = {

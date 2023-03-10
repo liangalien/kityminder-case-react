@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button} from '@antd';
+import { Row, Col, Button} from 'antd';
 import { BranchesOutlined, ClearOutlined, CopyOutlined, SnippetsOutlined } from '@ant-design/icons';
 
 class LayoutStyle extends Component {

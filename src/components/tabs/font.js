@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Menu, Dropdown, Space, Select, Popover } from '@antd';
+import { Row, Col, Button, Menu, Dropdown, Space, Select, Popover } from 'antd';
 
 import { BoldOutlined, ItalicOutlined, UnderlineOutlined, FontColorsOutlined, BgColorsOutlined } from '@ant-design/icons';
 
@@ -94,7 +94,7 @@ class Font extends Component {
                     <Col span={12}>
                         <Select
                             disabled={this.props.minder && this.props.minder.queryCommandState('text') == -1}
-                            style={{width: 70}}
+                            style={{width: 80}}
                             bordered={false}
                             placeholder="字号"
                             options={this.sizeList}

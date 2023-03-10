@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Dropdown, Menu } from '@antd';
+import {Row, Dropdown, Menu } from 'antd';
 
 class Result extends Component {
     stepSettingMenu = (index, record) => {

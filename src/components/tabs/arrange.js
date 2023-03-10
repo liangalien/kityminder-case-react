@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button} from '@antd';
+import { Row, Button} from 'antd';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
 
 class Arrange extends Component {

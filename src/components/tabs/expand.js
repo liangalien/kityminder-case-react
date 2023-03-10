@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button, Menu, Dropdown } from '@antd';
+import { Row, Button, Menu, Dropdown } from 'antd';
 import { NodeExpandOutlined, BorderInnerOutlined, DownOutlined  } from '@ant-design/icons';
 
 class Expand extends Component {

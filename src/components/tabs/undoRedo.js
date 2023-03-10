@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Button} from '@antd';
+import { Row, Button} from 'antd';
 import { SwapLeftOutlined, SwapRightOutlined } from '@ant-design/icons';
 
 class UndoRedo extends Component {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Tabs, Layout, Spin } from '@antd';
+import {Tabs, Layout, Spin } from 'antd';
 import UndoRedo  from './tabs/undoRedo';
 import AppendNode  from './tabs/appendNode';
 import Arrange from './tabs/arrange';
@@ -15,6 +15,7 @@ import Fonts from './tabs/font';
 import Expand from './tabs/expand';
 import SearchNode from './tabs/search';
 import Navigator from './tabs/navigator';
+import Extras from './tabs/extras';
 
 import 'hotbox-ui';
 import 'kity';
@@ -112,6 +113,9 @@ class Main extends Component {
                         <Disabled minder={this.state.minder}/>
                         <Priority minder={this.state.minder}/>
                         <Type minder={this.state.minder}/>
+                        {
+                            this.props.extras && this.props.extras.edit && <Extras minder={this.state.minder} extras={this.props.extras.edit}/>
+                        }
                     </Layout>
                 </TabPane>
 

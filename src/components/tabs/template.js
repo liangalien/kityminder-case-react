@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Menu, Dropdown, Space } from '@antd';
+import { Row, Col, Button, Menu, Dropdown, Space } from 'antd';
 
 class Template extends Component {
     constructor(props) {
