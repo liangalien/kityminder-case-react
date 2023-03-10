@@ -19,14 +19,28 @@ KityMinder Case React(Antd)
 npm i kityminder-case-react
 ```
 
+App.js
 ```javascript
-import MinderCase from 'kityminder-case-react';
+import React from "react";
+import MinderCase from "kityminder-case-react";
 
-export default function () {
+
+export default () => {
     return (
-        <MinderCase/>
+        <MinderCase
+            onFinished={(minder) => {
+                console.log("初始化成功，", minder);
+            }}
+            onChange={(data) => {
+                console.log("脑图有变更操作，", data);
+            }}
+            onRemove={(data) => {
+                console.log("脑图有删除操作，", data);
+            }}
+        />
     );
-}
+};
+
 ```
 
 ## 开发说明
