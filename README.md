@@ -1,10 +1,16 @@
 KityMinder Case React(Antd)
 ==========
 
-## 背景
-想基于百度脑图做一个测试用例编写、执行一体的在线脑图工具，本来都已经基于百度脑图的源码改了一版，是angularJS的，但是公司前端大部分用react，只能重新搞一下。
+百度脑图测试用例定制版 For React
+==========
 
-找了很久，都没有找到基于react的百度脑图，无奈之下只能自力更生，自己写了一个。react初学者，写得不咋的，勉强能用，也阉割掉了部分功能（其实是懒得写了）。
+## 说明
+基于[kityminder-case-core](https://github.com/liangalien/kityminder-case-core)，移植kityminder-editor部分功能和样式，使用antd重写
+
+Vue版本请移步：[kityminder-case-vue](https://github.com/liangalien/kityminder-case-vue)
+
+kityminder-editor for react原版（非测试用例定制版）即将发布，敬请期待。
+
 
 ## 预览
 [![](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)](https://github.com/liangalien/kityminder-case-react/blob/3fa74142c64c9cd1cf47e82ce855686f4f75a856/src/images/s1.png)
